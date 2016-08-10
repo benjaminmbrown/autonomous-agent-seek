@@ -47,8 +47,13 @@ var Vehicle = function(x,y){
 	}
 
 	//inverse of seek 
-	this.flee = function(){
-
+	this.flee = function(target){
+		var desired = p5.Vector.sub(this.position, target);
+		//desired.normalize();
+		desired.setMag(this.maxSpeed);
+		var steer = p5.Vector.sub(desired,this.velocity);
+		steer.limit(this.maxForce);
+		this.applyForce(steer);
 	}
 
 	this.pursue = function(){

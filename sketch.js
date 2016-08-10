@@ -20,7 +20,7 @@ function draw(){
 	ellipse(mouse.x,mouse.y, 48,48);
 
 
-	vehicle.seek(mouse);
+	vehicle.flee(mouse);
 	vehicle.update()
 	vehicle.display();
 
