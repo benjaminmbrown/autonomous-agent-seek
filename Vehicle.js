@@ -6,8 +6,13 @@ var Vehicle = function(x,y){
 	this.maxSpeed = 4;
 	this.maxForce = 0.1
 
-	this.seek = function(){
-
+	this.seek = function(target){
+		var desired = p5.Vector.sub(target,this.position);
+		//desired.normalize();
+		desired.setMag(this.maxSpeed);
+		var steer = p5.Vector.sub(desired,this.velocity);
+		steer.limit(this.maxForce);
+		this.applyForce(steer);
 	}
 
 	this.update = function(){//Standard Euler integration motion
