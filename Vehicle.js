@@ -4,7 +4,7 @@ var Vehicle = function(x,y){
 	this.position = createVector(x,y);
 	this.r = 6;
 	this.maxSpeed = 4;
-	this.maxForce = 0.1
+	this.maxForce = 0.1;
 
 	this.seek = function(target){
 		var desired = p5.Vector.sub(target,this.position);
@@ -50,15 +50,32 @@ var Vehicle = function(x,y){
 	this.flee = function(target){
 		var desired = p5.Vector.sub(this.position, target);
 		//desired.normalize();
+		desired.setMag(1);
+		var steer = p5.Vector.sub(desired,this.velocity);
+		steer.limit(this.maxForce);
+		this.applyForce(steer);
+	}
+/*Implement seeking a moving target, often referred to as “pursuit.” 
+In this case, your desired vector won’t point towards the object’s 
+current location, but rather its “future” location as extrapolated 
+from its current velocity. We’ll see this ability for a vehicle to 
+“predict the future” in later examples.
+*/
+	this.pursue = function(){
+		 //anticipate future location as target position
+
+		 //get accelleration and magnitude
+	
+
+		var desired = p5.Vector.sub(target, this.position);
+		//desired.normalize();
 		desired.setMag(this.maxSpeed);
 		var steer = p5.Vector.sub(desired,this.velocity);
 		steer.limit(this.maxForce);
 		this.applyForce(steer);
 	}
 
-	this.pursue = function(){
 
-	}
 
 
 }

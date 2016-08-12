@@ -9,3 +9,8 @@ Autonomous agent with seek function. In Processing (p5.js)
 
 #third step - agent flees moving target
 <img src = "https://media.giphy.com/media/3o6Zt31LfjLAwJ6Ey4/giphy.gif"/>
+
+#fourth - agent flees static enemy and seeks moving target
+
+
+<img src="https://media.giphy.com/media/l2SpNbYmhLMmTFGms/giphy.gif"/>
