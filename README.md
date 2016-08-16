@@ -12,5 +12,4 @@ Autonomous agent with seek function. In Processing (p5.js)
 
 #fourth - agent flees static enemy and seeks moving target
 
-
 <img src="https://media.giphy.com/media/l2SpNbYmhLMmTFGms/giphy.gif"/>
